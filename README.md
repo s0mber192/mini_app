@@ -1,2 +1,12 @@
-# mini_app
-mini_app
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Mini App</title>
+</head>
+<body>
+    <h1>MAIN LIST</h1>
+    <p>HELLO</p>
+    <img src="few_clouds.jpg">
+</body>
+</html>
