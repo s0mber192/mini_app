@@ -5,7 +5,7 @@
     <title>Mini App</title>
 </head>
 <body>
-    <h1>MAIN LIST</h1>
+    <h1>PLUSH PEPE</h1>
     <p>HELLO</p>
     <img src="Pepe.png">
 </body>
