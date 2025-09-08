@@ -6,7 +6,7 @@
 </head>
 <body>
     <h1>PLUSH PEPE</h1>
-    <p>HELLO</p>
+    <p>150.000$</p>
     <img src="Pepe.png">
 </body>
 </html>
