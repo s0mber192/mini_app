@@ -7,6 +7,6 @@
 <body>
     <h1>MAIN LIST</h1>
     <p>HELLO</p>
-    <img src="few_clouds.jpg">
+    <img src="Pepe.png">
 </body>
 </html>
