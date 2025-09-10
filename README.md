@@ -8,6 +8,6 @@
     <h1>PLUSH PEPE</h1>
     <p>150.000$</p>
     <img src="Pepe.png">
-    <img src="kupit.jpg">
+    <button id="buy">купить</button>
 </body>
 </html>
