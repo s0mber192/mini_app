@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -54,4 +55,5 @@
     </div>
     <script src="https://telegram.org/js/telegram-web-app.js?59"></script>
 </body>
-</html>
+</html>`
+
