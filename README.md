@@ -75,6 +75,7 @@
         <input class="text_input" type="text" placeholder="Имя" id="name">
         <input class = 'text_input' type="text" placeholder="Почта" id="mail">
         <input class="text_input" type="text" placeholder="номер телефона" id="number_phone">
+        <div id="error"></div>
          <div class="button-centre"> <button id ="offormit">оформить</button> </div>
 
     </form>
@@ -91,6 +92,27 @@
             document.getElementById('main').style.display= "none";
             document.getElementById('form').style.display= "block";
             document.getElementById('name').value = tg.initDataUnsafe.user.first_name
+        });
+        offormit.addEventListener("click", ()=> {
+            document.getElementById('error').innerText = ' ';
+            let name = document.getElementById('name').value;
+            let email = document.getElementById('email').value;
+            let numbers = document.getElementById('numbers').value;
+            if(name.lenght<2) {
+                document.grtElementById('error').innerText = 'Ошибка в имени';
+                return;
+            
+            };
+            if(email.lenght<2) {
+                document.grtElementById('error').innerText = 'Ошибка в почте';
+                return;
+            };
+            if(numbers.lenght<9) {
+                document.grtElementById('error').innerText = 'Ошибка в номере телефона';
+                return;
+            };
+            let data = {name:name,email:email,numbers:numbers}
+            tg.sendData(JSON.stringify(data))
 
 
 
@@ -101,3 +123,4 @@
     </script>
 </body>
 </html>
+
