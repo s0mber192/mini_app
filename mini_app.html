@@ -112,7 +112,8 @@
                 return;
             };
             let data = {name:name,email:email,numbers:numbers}
-            tg.sendData(JSON.stringify(data))
+            tg.sendData(JSON.stringify(data));
+            tg.close();
 
 
 
