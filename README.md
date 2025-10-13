@@ -87,6 +87,7 @@
         let tg = window.Telegram.WebApp;
         let buy = document.getElementById('buy');
         let offormit = document.getElementById('offormit');
+        tg.expand();
 
         buy.addEventListener("click", ()=> {
             document.getElementById('main').style.display= "none";
@@ -98,21 +99,22 @@
             let name = document.getElementById('name').value;
             let email = document.getElementById('email').value;
             let numbers = document.getElementById('numbers').value;
-            if(name.lenght<2) {
+            if(name.length<2) {
                 document.grtElementById('error').innerText = 'Ошибка в имени';
                 return;
-            
-            };
-            if(email.lenght<2) {
+
+            }
+            if(email.length<2) {
                 document.grtElementById('error').innerText = 'Ошибка в почте';
                 return;
-            };
-            if(numbers.lenght<9) {
+            }
+            if(numbers.length<9) {
                 document.grtElementById('error').innerText = 'Ошибка в номере телефона';
                 return;
-            };
+            }
             let data = {name:name,email:email,numbers:numbers}
-            tg.sendData(JSON.stringify(data))
+            tg.sendData(JSON.stringify(data));
+            tg.close();
 
 
 
@@ -123,4 +125,3 @@
     </script>
 </body>
 </html>
-
