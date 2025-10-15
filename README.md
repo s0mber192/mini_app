@@ -76,7 +76,7 @@
         <input class = 'text_input' type="text" placeholder="Почта" id="mail">
         <input class="text_input" type="text" placeholder="номер телефона" id="number_phone">
         <div id="error"></div>
-         <div class="button-centre"> <button id ="offormit">оформить</button> </div>
+         <div class="button-centre"> <button id ="order">оформить</button> </div>
 
     </form>
 
@@ -86,7 +86,7 @@
     <script>
         let tg = window.Telegram.WebApp;
         let buy = document.getElementById('buy');
-        let offormit = document.getElementById('offormit');
+        let order = document.getElementById('order');
         tg.expand();
 
         buy.addEventListener("click", ()=> {
@@ -94,7 +94,7 @@
             document.getElementById('form').style.display= "block";
             document.getElementById('name').value = tg.initDataUnsafe.user.first_name
         });
-        offormit.addEventListener("click", ()=> {
+        order.addEventListener("click", ()=> {
             tg.close();
 
 
