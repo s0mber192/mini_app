@@ -93,11 +93,29 @@
             document.getElementById('main').style.display= "none";
             document.getElementById('form').style.display= "block";
             document.getElementById('name').value = tg.initDataUnsafe.user.first_name
-           
+
         });
 
         order.addEventListener("click", ()=> {
+            document.getElementById('error').innerText = '';
+            let name = document.getElementById('name').value;
+            let email = document.getElementById('email').value;
+            let numbers = document.getElementById('numbers').value;
+            if(name.length<2) {
+                document.grtElementById('error').innerText = 'Ошибка в имени';
+                return;
 
+            }
+            if(email.length<2) {
+                document.grtElementById('error').innerText = 'Ошибка в почте';
+                return;
+            }
+            if(numbers.length<9) {
+                document.grtElementById('error').innerText = 'Ошибка в номере телефона';
+                return;
+            }
+            let data = {name:name,email:email,numbers:numbers}
+            tg.sendData(JSON.stringify(data));
 
 
 
