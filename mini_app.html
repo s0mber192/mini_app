@@ -95,13 +95,6 @@
             document.getElementById('name').value = tg.initDataUnsafe.user.first_name
         });
         offormit.addEventListener("click", ()=> {
-            document.getElementById('error').innerText = '';
-            let name = document.getElementById('name').value;
-            let email = document.getElementById('email').value;
-            let numbers = document.getElementById('numbers').value;
-
-            let data = {name:name,email:email,numbers:numbers}
-            tg.sendData(JSON.stringify(data));
             tg.close();
 
 
