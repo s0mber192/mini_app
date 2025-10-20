@@ -102,10 +102,20 @@
             let email = document.getElementById('email').value;
             let numbers = document.getElementById('numbers').value;
 
-            let data = {name:name,email:email,numbers:numbers}
+            let data = {
+                        name:name,
+                        email:email,
+                        numbers:numbers
+            };
             tg.sendData(JSON.stringify(data));
             tg.close();
 
 
 
         });
+
+
+
+    </script>
+</body>
+</html>
