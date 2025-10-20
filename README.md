@@ -1,1 +1,110 @@
-Title
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Mini App</title>
+
+    <style>
+        .img-centre {
+            text-align: center;
+        }
+        .button-centre {
+            text-align: center;
+        }
+        body {
+
+            background: #808080;
+        }
+
+        h1 {
+            margin-top: 50px;
+            margin-bottom: 10px;
+        }
+
+        button {
+            border: 0;
+            border-radius: 5px:
+            margin-top: 50px;
+            height: 60px;
+            width: 200px;
+            font-size: 20px;
+            font-wight: 500px;
+            cursor: pointer;
+            color: 'black';
+            transition: all 500ms ease;
+            background: #819ec7;
+         }
+         button:hover {
+                background: #365178
+         }
+        p {
+            color: 'red';
+            margin-top: 25px;
+            margin-bottom: 10px;
+        }
+        .text_input {
+            width: 60%;
+            background: #3e5f8a;
+            margin: 10px;
+            padding: 15px;
+            border: 2px;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+        .text_input::placeholder {
+            color: black;
+            opacity: 0.7;
+        }
+        form {
+            display: none;
+            text-align: center;
+
+        }
+
+    </style>
+</head>
+<body>
+    <div id="main">
+        <h1 align="center">PLUSH PEPE</h1>
+        <p align="center">150.000$</p>
+        <div class="img-centre"> <img src="Pepe.png"> </div>
+        <p>              </p>
+        <div class="button-centre"> <button id ="buy">купить</button> </div>
+    </div>
+    <form id="form">
+        <input class="text_input" type="text" placeholder="Имя" id="name">
+        <input class = 'text_input' type="text" placeholder="Почта" id="mail">
+        <input class="text_input" type="text" placeholder="номер телефона" id="number_phone">
+        <div id="error"></div>
+        <div class="button-centre"> <button id ="order">оформить</button> </div>
+
+    </form>
+
+
+    <script src="https://telegram.org/js/telegram-web-app.js?59"></script>
+
+    <script>
+        let tg = window.Telegram.WebApp;
+        let buy = document.getElementById('buy');
+        let order = document.getElementById('order');
+        tg.expand();
+
+        buy.addEventListener("click", ()=> {
+            document.getElementById('main').style.display= "none";
+            document.getElementById('form').style.display= "block";
+            document.getElementById('name').value = tg.initDataUnsafe.user.first_name
+
+        });
+
+        order.addEventListener("click", ()=> {
+            tg.close();
+
+
+
+        });
+
+
+
+    </script>
+</body>
+</html>
