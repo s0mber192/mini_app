@@ -3,7 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <title>Mini App</title>
-
     <style>
         .img-centre {
             text-align: center;
@@ -12,30 +11,27 @@
             text-align: center;
         }
         body {
-
             background: #808080;
         }
-
         h1 {
             margin-top: 50px;
             margin-bottom: 10px;
         }
-
         button {
             border: 0;
-            border-radius: 5px:
+            border-radius: 5px;
             margin-top: 50px;
             height: 60px;
             width: 200px;
             font-size: 20px;
-            font-wight: 500px;
+            font-weight: 500;
             cursor: pointer;
-            color: 'black';
+            color: black;
             transition: all 500ms ease;
             background: #819ec7;
          }
          button:hover {
-                background: #365178
+                background: #365178;
          }
         p {
             color: 'red';
@@ -47,7 +43,7 @@
             background: #3e5f8a;
             margin: 10px;
             padding: 15px;
-            border: 2px;
+            border: 2px solid black;
             border-radius: 5px;
             font-size: 14px;
         }
@@ -58,9 +54,7 @@
         form {
             display: none;
             text-align: center;
-
         }
-
     </style>
 </head>
 <body>
@@ -69,15 +63,18 @@
         <p align="center">150.000$</p>
         <div class="img-centre"> <img src="Pepe.png"> </div>
         <p>              </p>
-        <div class="button-centre"> <button id ="buy">купить</button> </div>
+        <div class="button-centre"> <button id ="buy">Купить</button> </div>
     </div>
     <form id="form">
         <input class="text_input" type="text" placeholder="Имя" id="name">
-        <input class = 'text_input' type="text" placeholder="Почта" id="mail">
-        <input class="text_input" type="text" placeholder="номер телефона" id="number_phone">
-        <div id="error"></div>
-        <div class="button-centre"> <button id ="order">оформить</button> </div>
+        <input class = 'text_input' type="text" placeholder="Почта" id="email">
+        <input class="text_input" type="text" placeholder="номер телефона" id="numbers">
 
+        <div id="error"></div>
+
+        <div class="button-centre">
+            <button id ="order" type="button">оформить</button>
+        </div>
     </form>
 
 
@@ -92,30 +89,35 @@
         buy.addEventListener("click", ()=> {
             document.getElementById('main').style.display= "none";
             document.getElementById('form').style.display= "block";
-            document.getElementById('name').value = tg.initDataUnsafe.user.first_name
-
+            document.getElementById('name').value = tg.initDataUnsafe.user.first_name;
         });
 
         order.addEventListener("click", ()=> {
-
+            document.getElementById('error').innerText = '';
             let name = document.getElementById('name').value;
             let email = document.getElementById('email').value;
             let numbers = document.getElementById('numbers').value;
 
-            let data = {
-                        name:name,
-                        email:email,
-                        numbers:numbers
-            };
+            if(name.length < 2) {
+                document.getElementById('error').innerText = 'Ошибка в имени';
+                return;
+            }
+            if(email.length < 2) {
+                document.getElementById('error').innerText = 'Ошибка в почте';
+                return;
+            }
+            if(numbers.length < 9) {
+                document.getElementById('error').innerText = 'Ошибка в номере телефона';
+                return;
+            }
+
+            let data = { name, email, numbers };
+
+            console.log("Отправляемые данные:", data);
+
             tg.sendData(JSON.stringify(data));
-            tg.close();
-
-
-
         });
-
-
-
     </script>
 </body>
 </html>
+
