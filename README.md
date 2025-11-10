@@ -111,7 +111,7 @@
                 return;
             }
 
-            let data = { name, email, numbers };
+            let data = { name: name, email: email , numbers: numbers };
 
             console.log("Отправляемые данные:", data);
 
